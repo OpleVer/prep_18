@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "distrito",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "seccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo_acta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo_casilla",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "votos_1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "votos_2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "votos_3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171026014605",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "actas",
+    "jpaMetamodelFiltering": true,
+    "pagination": "infinite-scroll"
+}

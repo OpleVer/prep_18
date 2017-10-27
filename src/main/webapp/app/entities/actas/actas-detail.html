@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span>Actas</span> {{vm.actas.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Distrito</span></dt>
+        <dd>
+            <span>{{vm.actas.distrito}}</span>
+        </dd>
+        <dt><span>Seccion</span></dt>
+        <dd>
+            <span>{{vm.actas.seccion}}</span>
+        </dd>
+        <dt><span>Tipo Acta</span></dt>
+        <dd>
+            <span>{{vm.actas.tipo_acta}}</span>
+        </dd>
+        <dt><span>Tipo Casilla</span></dt>
+        <dd>
+            <span>{{vm.actas.tipo_casilla}}</span>
+        </dd>
+        <dt><span>Imagen</span></dt>
+        <dd>
+            <span>{{vm.actas.imagen}}</span>
+        </dd>
+        <dt><span>Votos 1</span></dt>
+        <dd>
+            <span>{{vm.actas.votos_1}}</span>
+        </dd>
+        <dt><span>Votos 2</span></dt>
+        <dd>
+            <span>{{vm.actas.votos_2}}</span>
+        </dd>
+        <dt><span>Votos 3</span></dt>
+        <dd>
+            <span>{{vm.actas.votos_3}}</span>
+        </dd>
+        <dt><span>Validacion</span></dt>
+        <dd>
+            <span>{{vm.actas.validacion}}</span>
+        </dd>
+        <dt><span>Estatus</span></dt>
+        <dd>
+            <span>{{vm.actas.estatus}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="actas-detail.edit({id:vm.actas.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,86 @@
+<div>
+    <h2>Actas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="actas.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Actas
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-4 no-padding-left">
+            <input id="miboton" type="button" value="Refrescar" />
+
+            <script type="text/javascript">
+            $(document.activeElement.tabla_actas).ready(function() {
+            $('#miboton').click(function() {
+            // Recargo la página
+            location.reload();
+               });
+            });
+            </script>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" id="tabla_actas">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="distrito"><span>Distrito</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="seccion"><span>Seccion</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tipo_acta"><span>Tipo Acta</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tipo_casilla"><span>Tipo Casilla</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="imagen"><span>Imagen</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="votos_1"><span>Votos 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="votos_2"><span>Votos 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="votos_3"><span>Votos 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validacion"><span>Validacion</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="estatus"><span>Estatus</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="actas in vm.actas track by actas.id">
+                    <td><a ui-sref="actas-detail({id:actas.id})">{{actas.id}}</a></td>
+                    <td>{{actas.distrito}}</td>
+                    <td>{{actas.seccion}}</td>
+                    <td>{{actas.tipo_acta}}</td>
+                    <td>{{actas.tipo_casilla}}</td>
+                    <td>{{actas.imagen}}</td>
+                    <td>{{actas.votos_1}}</td>
+                    <td>{{actas.votos_2}}</td>
+                    <td>{{actas.votos_3}}</td>
+                    <td>{{actas.validacion}}</td>
+                    <td>{{actas.estatus}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="actas-detail({id:actas.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="actas.edit({id:actas.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="actas.delete({id:actas.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
